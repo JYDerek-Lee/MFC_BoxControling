@@ -44,13 +44,13 @@ public:
 	afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
 	afx_msg void OnSize(UINT nType, int cx, int cy);
 	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnBlockSize();
 
 	CSize cView;
 	CPoint pt;
 	bool click[4][5];
 	int xCell=100, yCell=50; //블럭 상하 높이
-
-	afx_msg void OnBlockSize();
+	int m_Low = 0, m_Col = 0; // 블럭 상하 개수
 };
 
 #ifndef _DEBUG  // Ch3_6_AssignmentView.cpp의 디버그 버전

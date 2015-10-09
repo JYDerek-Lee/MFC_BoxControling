@@ -39,6 +39,7 @@ END_MESSAGE_MAP()
 
 CCh3_6_AssignmentView::CCh3_6_AssignmentView()
 {
+
 	// TODO: 여기에 생성 코드를 추가합니다.
 
 }
@@ -100,6 +101,12 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	pDC->Rectangle(pt.x, pt.y, pt.x + 100, pt.y + 50);
 	pDC->SelectObject(oldBrush); //원상복귀
 	m_brSkyBlue.DeleteObject();
+
+	CString str;
+	str.Format(_T("(%d, %d)"), m_Low, m_Col);
+	CClientDC dc(this);
+	dc.TextOut(pt.x, pt.y, str);
+
 }
 
 
@@ -176,10 +183,10 @@ void CCh3_6_AssignmentView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 }
 
 void CCh3_6_AssignmentView::OnSize(UINT nType, int cx, int cy) {
-	CView::OnSize(nType, cx, cy);
 	cView = CSize(cx, cy);
 	//cView = CSize(100, 50);
 	pt = CPoint(100, 100); //시작위치 지정
+	CView::OnSize(nType, cx, cy);
 }
 
 void CCh3_6_AssignmentView::OnLButtonDown(UINT nFlags, CPoint point) { 
@@ -209,7 +216,8 @@ void CCh3_6_AssignmentView::OnBlockSize() {
 	CBoxDlg dlg;
 	int res = dlg.DoModal();
 	if (res == IDOK) {
-		MessageBox(_T("회원 등록 완료"));
+		m_Low = dlg.m_Low;
+		m_Col = dlg.m_Col;
 	}
 	else if (res == IDCANCEL) {
 		MessageBox(_T("회원 등록 취소"));
