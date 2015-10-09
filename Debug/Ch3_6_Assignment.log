@@ -1,0 +1,18 @@
+﻿빌드 시작: 2015-10-09 오후 4:55:24
+     1>2 노드의 "C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Ch3_6_Assignment\Ch3_6_Assignment.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         D:\1.Work\VS_P_2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Ch3_6_Assignment.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Ch3_6_AssignmentView.cpp
+         Ch3_6_AssignmentView.cpp
+       Link:
+         D:\1.Work\VS_P_2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Debug\Ch3_6_Assignment.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:D:\1.Work\VS_P_2013\VC\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Debug\Ch3_6_Assignment.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Debug\Ch3_6_Assignment.lib" /MACHINE:X86 Debug\Ch3_6_Assignment.res
+         Debug\Ch3_6_Assignment.obj
+         Debug\Ch3_6_AssignmentDoc.obj
+         Debug\Ch3_6_AssignmentView.obj
+         Debug\MainFrm.obj
+         Debug\stdafx.obj
+         Ch3_6_Assignment.vcxproj -> C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Debug\Ch3_6_Assignment.exe
+     1>"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Ch3_6_Assignment\Ch3_6_Assignment.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.54
