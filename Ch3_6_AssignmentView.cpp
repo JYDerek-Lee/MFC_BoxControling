@@ -83,7 +83,7 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	oldBrush.CreateStockObject(WHITE_BRUSH); //이전위치
 	m_brSkyBlue.CreateSolidBrush(RGB(166, 202, 240)); //현재위치
 	pDC->SelectObject(&m_brSkyBlue);
-
+	//씨발
 	//클릭 위치 확인 후 색칠
 	for (i = 0; i < 4; i++) {
 		for (k = 0; k < 5; k++) {
