@@ -101,6 +101,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BoxDlg.h" />
     <ClInclude Include="Ch3_6_Assignment.h" />
     <ClInclude Include="Ch3_6_AssignmentDoc.h" />
     <ClInclude Include="Ch3_6_AssignmentView.h" />
@@ -110,6 +111,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BoxDlg.cpp" />
     <ClCompile Include="Ch3_6_Assignment.cpp" />
     <ClCompile Include="Ch3_6_AssignmentDoc.cpp" />
     <ClCompile Include="Ch3_6_AssignmentView.cpp" />

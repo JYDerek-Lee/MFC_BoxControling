@@ -50,6 +50,7 @@ public:
 	bool click[4][5];
 	int xCell=100, yCell=50; //블럭 상하 높이
 
+	afx_msg void OnBlockSize();
 };
 
 #ifndef _DEBUG  // Ch3_6_AssignmentView.cpp의 디버그 버전

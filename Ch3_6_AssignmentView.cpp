@@ -30,6 +30,7 @@ BEGIN_MESSAGE_MAP(CCh3_6_AssignmentView, CView)
 //	ON_WM_CHAR()
 ON_WM_SIZE()
 ON_WM_LBUTTONDOWN()
+ON_COMMAND(IDM_BLOCK_SIZE, &CCh3_6_AssignmentView::OnBlockSize)
 END_MESSAGE_MAP()
 
 // CCh3_6_AssignmentView 생성/소멸
@@ -200,4 +201,19 @@ void CCh3_6_AssignmentView::OnLButtonDown(UINT nFlags, CPoint point) {
 	}
 	Invalidate();
 	CView::OnLButtonDown(nFlags, point);
+}
+
+#include "BoxDlg.h"
+void CCh3_6_AssignmentView::OnBlockSize() {
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	CBoxDlg dlg;
+	int res = dlg.DoModal();
+	if (res == IDOK) {
+		MessageBox(_T("회원 등록 완료"));
+	}
+	else if (res == IDCANCEL) {
+		MessageBox(_T("회원 등록 취소"));
+	}
+
+	Invalidate();
 }
