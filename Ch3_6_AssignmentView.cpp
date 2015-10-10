@@ -109,7 +109,7 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 
 }
 
-
+//Ω¥πﬂ
 // CCh3_6_AssignmentView ¿Œº‚
 
 BOOL CCh3_6_AssignmentView::OnPreparePrinting(CPrintInfo* pInfo)
