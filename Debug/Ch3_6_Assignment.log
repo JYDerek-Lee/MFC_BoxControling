@@ -1,4 +1,4 @@
-﻿빌드 시작: 2015-10-09 오후 6:01:17
+﻿빌드 시작: 2015-10-10 오후 8:49:30
      1>2 노드의 "C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Ch3_6_Assignment\Ch3_6_Assignment.vcxproj" 프로젝트(Build 대상)입니다.
      1>ClCompile:
          D:\1.Work\VS_P_2013\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Ch3_6_Assignment.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Ch3_6_AssignmentView.cpp
@@ -16,4 +16,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:00.54
+경과 시간: 00:00:00.42

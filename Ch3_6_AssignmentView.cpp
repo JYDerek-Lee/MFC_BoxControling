@@ -71,10 +71,10 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	int fx = 100, fy = 100; //초기 위치
 	int i = 0, k = 0;
 	//격자 생성
-	for (i = 0; i < 4; i++) {
+	for (i = 0; i < m_Col; i++) {
 		fx = 100;
 		pDC->Rectangle(fx, fy, fx + xCell, fy + yCell);
-		for (k = 0; k < 5; k++) {
+		for (k = 0; k < m_Low; k++) {
 			pDC->Rectangle(fx, fy, fx + xCell, fy + yCell);
 			XUP;
 		}
@@ -85,14 +85,14 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	oldBrush.CreateStockObject(WHITE_BRUSH); //이전위치
 	m_brSkyBlue.CreateSolidBrush(RGB(166, 202, 240)); //현재위치
 	pDC->SelectObject(&m_brSkyBlue);
-	//씨발
+	
 	//클릭 위치 확인 후 색칠
-	for (i = 0; i < 4; i++) {
-		for (k = 0; k < 5; k++) {
+	for (i = 0; i < m_Col; i++) {
+		for (k = 0; k < m_Low; k++) {
 			if (click[i][k] == TRUE) {
-				pDC->Rectangle(xCell*(k+1), yCell*(i+2), xCell*(k+2), yCell*(i+3));
+				pDC->Rectangle(xCell*(k+1), yCell*(i+1), xCell*(k+2), yCell*(i+2));
 				pt.x = xCell*(k + 1);
-				pt.y = yCell*(i + 2);
+				pt.y = yCell*(i + 1);
 				click[i][k] = FALSE;
 			}
 		}
@@ -194,13 +194,13 @@ void CCh3_6_AssignmentView::OnLButtonDown(UINT nFlags, CPoint point) {
 	int i = 0, k = 0;
 
 	//격자 내부 클릭 판별
-	if (point.x >=100 && point.x <= 600 && point.y >= 50 && point.y <= 300) {
+	if (point.x >=100 && point.x <= (fx*m_Low) && point.y >= 50 && point.y <= (fy*m_Col)) {
 		//세부 위치 파악 후 배열에 저장
-		for (i = 0; i < 4; i++) {
+		for (i = 0; i < m_Col; i++) {
 			fx = 100;
-			for (k = 0; k < 5; k++) {
-				click[i][k] = (point.x > fx && point.x < fx + xCell && point.y > fy\
-					&& point.y < fy + yCell) ? (TRUE) : (FALSE);
+			for (k = 0; k < m_Low; k++) {
+				click[i][k] = (point.x > fx && point.x <= fx + xCell && point.y > fy\
+					&& point.y <= fy + yCell) ? (TRUE) : (FALSE);
 				XUP;
 			}
 			YUP;
@@ -218,6 +218,7 @@ void CCh3_6_AssignmentView::OnBlockSize() {
 	if (res == IDOK) {
 		m_Low = dlg.m_Low;
 		m_Col = dlg.m_Col;
+		MessageBox(_T("등록했다"));
 	}
 	else if (res == IDCANCEL) {
 		MessageBox(_T("회원 등록 취소"));
