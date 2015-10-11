@@ -20,6 +20,6 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBlockSize();
-	int m_Low;
+	int m_Row;
 	int m_Col;
 };

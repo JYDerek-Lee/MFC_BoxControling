@@ -28,9 +28,9 @@ BEGIN_MESSAGE_MAP(CCh3_6_AssignmentView, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CView::OnFilePrintPreview)
 	ON_WM_KEYDOWN()
 //	ON_WM_CHAR()
-ON_WM_SIZE()
-ON_WM_LBUTTONDOWN()
-ON_COMMAND(IDM_BLOCK_SIZE, &CCh3_6_AssignmentView::OnBlockSize)
+	ON_WM_SIZE()
+	ON_WM_LBUTTONDOWN()
+	ON_COMMAND(IDM_BLOCK_SIZE, &CCh3_6_AssignmentView::OnBlockSize)
 END_MESSAGE_MAP()
 
 // CCh3_6_AssignmentView 생성/소멸
@@ -39,7 +39,6 @@ END_MESSAGE_MAP()
 
 CCh3_6_AssignmentView::CCh3_6_AssignmentView()
 {
-
 	// TODO: 여기에 생성 코드를 추가합니다.
 
 }
@@ -71,10 +70,10 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	int fx = 100, fy = 100; //초기 위치
 	int i = 0, k = 0;
 	//격자 생성
-	for (i = 0; i < m_Col; i++) {
+	for (i = 0; i < m_Row; i++) {
 		fx = 100;
 		pDC->Rectangle(fx, fy, fx + xCell, fy + yCell);
-		for (k = 0; k < m_Low; k++) {
+		for (k = 0; k < m_Col; k++) {
 			pDC->Rectangle(fx, fy, fx + xCell, fy + yCell);
 			XUP;
 		}
@@ -87,12 +86,12 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	pDC->SelectObject(&m_brSkyBlue);
 	
 	//클릭 위치 확인 후 색칠
-	for (i = 0; i < m_Col; i++) {
-		for (k = 0; k < m_Low; k++) {
+	for (i = 0; i < m_Row; i++) {
+		for (k = 0; k < m_Col; k++) {
 			if (click[i][k] == TRUE) {
-				pDC->Rectangle(xCell*(k+1), yCell*(i+1), xCell*(k+2), yCell*(i+2));
+				pDC->Rectangle(xCell*(k+1), yCell*(i+1)+yCell, xCell*(k+2), yCell*(i+2)+yCell);
 				pt.x = xCell*(k + 1);
-				pt.y = yCell*(i + 1);
+				pt.y = yCell*(i + 1)+yCell;
 				click[i][k] = FALSE;
 			}
 		}
@@ -103,7 +102,7 @@ void CCh3_6_AssignmentView::OnDraw(CDC *pDC)
 	m_brSkyBlue.DeleteObject();
 
 	CString str;
-	str.Format(_T("(%d, %d)"), m_Low, m_Col);
+	str.Format(_T("(%d행, %d열)"), m_Row, m_Col);
 	CClientDC dc(this);
 	dc.TextOut(pt.x, pt.y, str);
 
@@ -157,24 +156,24 @@ void CCh3_6_AssignmentView::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags) {
 		case VK_UP: 
 			pt.y -= 50;
 			if (pt.y < 100)
-				pt.y = 250;
+				pt.y = 50*m_Row;
 			break;
 		
 		case VK_DOWN:
 			pt.y += 50;
-			if (pt.y>=300)
+			if (pt.y>50*m_Row+50)
 				pt.y = 100; 
 			break;
 		
 		case VK_LEFT: 
 			pt.x -= 100;
 			if (pt.x<100) 
-				pt.x = 500;
+				pt.x = 100*m_Col;
 			break;
 		
 		case VK_RIGHT: 
 			pt.x += 100;
-			if (pt.x>=600)
+			if (pt.x>100*m_Col)
 				pt.x = 100;
 			break;
 		}
@@ -192,13 +191,15 @@ void CCh3_6_AssignmentView::OnSize(UINT nType, int cx, int cy) {
 void CCh3_6_AssignmentView::OnLButtonDown(UINT nFlags, CPoint point) { 
 	int fx = 100, fy = 100; //초기 위치
 	int i = 0, k = 0;
+//	int xNum = m_Col;
+//	int yNum = m_Row;
 
 	//격자 내부 클릭 판별
-	if (point.x >=100 && point.x <= (fx*m_Low) && point.y >= 50 && point.y <= (fy*m_Col)) {
+	if (point.x > 100 && point.x <= (xCell*m_Col + fx) && point.y > 50 && point.y <= (yCell*m_Row + fy)) {
 		//세부 위치 파악 후 배열에 저장
-		for (i = 0; i < m_Col; i++) {
+		for (i = 0; i < m_Row; i++) {
 			fx = 100;
-			for (k = 0; k < m_Low; k++) {
+			for (k = 0; k < m_Col; k++) {
 				click[i][k] = (point.x > fx && point.x <= fx + xCell && point.y > fy\
 					&& point.y <= fy + yCell) ? (TRUE) : (FALSE);
 				XUP;
@@ -216,12 +217,12 @@ void CCh3_6_AssignmentView::OnBlockSize() {
 	CBoxDlg dlg;
 	int res = dlg.DoModal();
 	if (res == IDOK) {
-		m_Low = dlg.m_Low;
+		m_Row = dlg.m_Row;
 		m_Col = dlg.m_Col;
-		MessageBox(_T("등록했다"));
+		MessageBox(_T("격자를 재구성 합니다"));
 	}
 	else if (res == IDCANCEL) {
-		MessageBox(_T("회원 등록 취소"));
+		MessageBox(_T("격자 등록 취소"));
 	}
 
 	Invalidate();

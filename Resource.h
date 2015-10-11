@@ -9,6 +9,7 @@
 #define IDD_OPTION_DIALOG               310
 #define IDC_LOW                         1000
 #define IDC_EDIT_LOW                    1000
+#define IDC_EDIT_ROW                    1000
 #define IDC_COL                         1001
 #define ID_32771                        32771
 #define IDM_BLOCK_SIZE                  32772

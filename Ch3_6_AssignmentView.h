@@ -48,9 +48,9 @@ public:
 
 	CSize cView;
 	CPoint pt;
-	bool click[4][5];
-	int xCell=100, yCell=50; //블럭 상하 높이
-	int m_Low = 5, m_Col = 4; // 블럭 상하 개수
+	int xCell = 100, yCell = 50; //블럭 상하 높이
+	int m_Row = 4, m_Col = 5; // 블럭 행렬 수
+	bool click[20][20];
 };
 
 #ifndef _DEBUG  // Ch3_6_AssignmentView.cpp의 디버그 버전
