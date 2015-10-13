@@ -1,0 +1,29 @@
+﻿빌드 시작: 2015-10-13 오후 1:45:23
+     1>2 노드의 "C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Ch3_6_Assignment\Ch3_6_Assignment.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         D:\1.Work\VS_P_2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\Ch3_6_Assignment.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         D:\1.Work\VS_P_2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _WINDOWS /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\Ch3_6_Assignment.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BoxDlg.cpp Ch3_6_Assignment.cpp Ch3_6_AssignmentDoc.cpp Ch3_6_AssignmentView.cpp MainFrm.cpp
+         BoxDlg.cpp
+         Ch3_6_Assignment.cpp
+         Ch3_6_AssignmentDoc.cpp
+         Ch3_6_AssignmentView.cpp
+         MainFrm.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D NDEBUG /D _UNICODE /D UNICODE /D _AFXDLL /l"0x0412" /IRelease\ /nologo /fo"Release\Ch3_6_Assignment.res" Ch3_6_Assignment.rc 
+       Link:
+         D:\1.Work\VS_P_2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Release\Ch3_6_Assignment.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:D:\1.Work\VS_P_2013\VC\Include\Manifest\dpiaware.manifest /DEBUG /PDB:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Release\Ch3_6_Assignment.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /LTCG /TLBID:1 /ENTRY:"wWinMainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Release\Ch3_6_Assignment.lib" /MACHINE:X86 /SAFESEH Release\Ch3_6_Assignment.res
+         Release\BoxDlg.obj
+         Release\Ch3_6_Assignment.obj
+         Release\Ch3_6_AssignmentDoc.obj
+         Release\Ch3_6_AssignmentView.obj
+         Release\MainFrm.obj
+         Release\stdafx.obj
+         코드를 생성하고 있습니다.
+         코드를 생성했습니다.
+         Ch3_6_Assignment.vcxproj -> C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Release\Ch3_6_Assignment.exe
+     1>"C:\Users\J\Google 드라이브\1.일반자료박스\MFC\Source\MY_MFC\Ch3_6_Assignment\Ch3_6_Assignment.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:06.56
